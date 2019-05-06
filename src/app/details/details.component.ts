@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { WeatherService } from '../weather.service';
-
+import {DailyForeCast, WeatherService} from '../weather.service';
 @Component({
   selector: 'weather-details',
   templateUrl: './details.component.html',
@@ -14,6 +13,7 @@ export class DetailsComponent implements OnInit {
   hum: number;
   wind: number;
   today: string;
+  forecast: DailyForeCast[];
 
   constructor(public activeRouter: ActivatedRoute, public weatherService: WeatherService) {
   }
@@ -25,6 +25,7 @@ export class DetailsComponent implements OnInit {
       this.temp = this.weatherService.getCurrentTemp(this.city);
       this.hum = this.weatherService.getCurrentHum(this.city);
       this.wind = this.weatherService.getCurrentWind(this.city);
+      this.forecast = this.weatherService.getForecast();
     });
   }
 }

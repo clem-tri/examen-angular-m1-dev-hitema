@@ -1,5 +1,5 @@
 <div class="details-page">
-  <a class="back__button"><b>&#8630;</b> BACK</a>
+  <a class="back__button" routerLink="/"><b>&#8630;</b> BACK</a>
   <section class="main-weather">
     <section class="card-header">
       <svg  viewBox="4302 163 1218 406">
@@ -47,11 +47,10 @@
 
     <main class="body-content__wrapper">
       <section class="forecast__container">
-        <!-- display forecast for the whole week --> 
-        <div class="day-weather__container">
-          <span class="day-name"> </span>
-          <span class="day-temp"> °</span>
-          <span class="day-condition"> </span>
+        <div class="day-weather__container" *ngFor="let fc of forecast">
+          <span class="day-name"> {{fc.name}} </span>
+          <span class="day-temp"> {{fc.temp}} °</span>
+          <span class="day-condition"> {{fc.condition}} </span>
         </div>
       </section>
     </main>
