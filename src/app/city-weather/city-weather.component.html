@@ -3,7 +3,7 @@
     <input (click)="$event.stopPropagation()" type="text" [(ngModel)]="name" (ngModelChange)="updateCity(name)"/>
   </span>
   <div class="weather-icon__container">
-    <i class="fas fa-10x fa-{{icon}}"></i>
+    <app-icon [name]="condition" [size]="'big'"></app-icon>
   </div>
   <div class="temperature-text__container">
     <span class="temperature__text">{{ currentTemp | number : '1.1-1'  }}</span>

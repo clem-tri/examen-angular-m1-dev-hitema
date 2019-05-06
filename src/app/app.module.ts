@@ -8,6 +8,7 @@ import { HomeComponent } from './home/home.component';
 import { CityWeatherComponent } from './city-weather/city-weather.component';
 import { DetailsComponent } from './details/details.component';
 import {FormsModule} from '@angular/forms';
+import { IconComponent } from './icon/icon.component';
 registerLocaleData(localeFr);
 
 
@@ -16,7 +17,8 @@ registerLocaleData(localeFr);
     AppComponent,
     HomeComponent,
     CityWeatherComponent,
-    DetailsComponent
+    DetailsComponent,
+    IconComponent
   ],
   imports: [
     BrowserModule,
